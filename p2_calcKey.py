@@ -1,5 +1,7 @@
 import sys
 
+NUM_LETTERS_IN_ENGLISH_ALPHABET = 26
+
 # the variable, number, will always be a whole number. No need to deal with negatives!
 # this function sums all digits within itself until it only has one digit
 def sum_digits(number):
@@ -13,7 +15,7 @@ def sum_digits(number):
 		return sum_digits(sum)
 
 def castToLetter(num):
-	toMap = str(num%26)  #letters 
+	toMap = str(num%NUM_LETTERS_IN_ENGLISH_ALPHABET)
 
 	#As 6 maps to F, I map 0 to Z to deal with the corner case of num being zero or if there are numbers bigger than 25
 	mapToAlphabet = {}
