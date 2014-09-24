@@ -48,8 +48,7 @@ class Cipher(object):
             else:
                 self.dupHashMap[val] = True
                 index += 1
-        print self.value
-    def printCodedMessage(self):
+    def printDecodedMessage(self):
         codedMessage = ''
         for char in self.message:
             codedMessage += self.cipherMapping[char]
@@ -57,37 +56,35 @@ class Cipher(object):
     def processKey(self):
         self.value =  self.key + " ZYXWVUTSRQPONMLKJIHGFEDCBA"
         self.removeDups()
-        
-        print len(self.value)
 
         #create mapping
-        self.cipherMapping["A"] = self.value[0]
-        self.cipherMapping["B"] = self.value[1]
-        self.cipherMapping["C"] = self.value[2]
-        self.cipherMapping["D"] = self.value[3]
-        self.cipherMapping["E"] = self.value[4]
-        self.cipherMapping["F"] = self.value[5]
-        self.cipherMapping["G"] = self.value[6]
-        self.cipherMapping["H"] = self.value[7]
-        self.cipherMapping["I"] = self.value[8]
-        self.cipherMapping["J"] = self.value[9]
-        self.cipherMapping["K"] = self.value[10]
-        self.cipherMapping["L"] = self.value[11]
-        self.cipherMapping["M"] = self.value[12]
-        self.cipherMapping["N"] = self.value[13]
-        self.cipherMapping["O"] = self.value[14]
-        self.cipherMapping["P"] = self.value[15]
-        self.cipherMapping["Q"] = self.value[16]
-        self.cipherMapping["R"] = self.value[17]
-        self.cipherMapping["S"] = self.value[18]
-        self.cipherMapping["T"] = self.value[19]
-        self.cipherMapping["U"] = self.value[20]
-        self.cipherMapping["V"] = self.value[21]
-        self.cipherMapping["W"] = self.value[22]
-        self.cipherMapping["X"] = self.value[23]
-        self.cipherMapping["Y"] = self.value[24]
-        self.cipherMapping["Z"] = self.value[25]
-        self.cipherMapping[" "] = self.value[26]
+        self.cipherMapping[ self.value[0] ] = "A"
+        self.cipherMapping[ self.value[1] ] = "B" 
+        self.cipherMapping[ self.value[2] ] = "C" 
+        self.cipherMapping[ self.value[3] ] = "D"
+        self.cipherMapping[ self.value[4] ] = "E"
+        self.cipherMapping[ self.value[5] ] = "F"
+        self.cipherMapping[ self.value[6] ] = "G"  
+        self.cipherMapping[ self.value[7] ] = "H"
+        self.cipherMapping[ self.value[8] ] = "I"
+        self.cipherMapping[ self.value[9] ] = "J"
+        self.cipherMapping[ self.value[10]] = "K"
+        self.cipherMapping[ self.value[11]] = "L"
+        self.cipherMapping[ self.value[12]] = "M"
+        self.cipherMapping[ self.value[13]] = "N"
+        self.cipherMapping[ self.value[14]] = "O"
+        self.cipherMapping[ self.value[15]] = "P" 
+        self.cipherMapping[ self.value[16]] = "Q"
+        self.cipherMapping[ self.value[17]] = "R"
+        self.cipherMapping[ self.value[18]] = "S"
+        self.cipherMapping[ self.value[19]] = "T"
+        self.cipherMapping[ self.value[20]] = "U"
+        self.cipherMapping[ self.value[21]] = "V"
+        self.cipherMapping[ self.value[22]] = "W"
+        self.cipherMapping[ self.value[23]] = "X"
+        self.cipherMapping[ self.value[24]] = "Y" 
+        self.cipherMapping[ self.value[25]] = "Z"
+        self.cipherMapping[ self.value[26]] = " "
 
 
 
