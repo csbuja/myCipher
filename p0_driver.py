@@ -14,5 +14,4 @@ if __name__ == "__main__":
 				data.map.exploreIsland([nodeidx,lineidx])
 				#increment the number of islands seen thus far
 				data.map.addAnotherIsland()		
-
 	data.map.printAverageIslandSize()

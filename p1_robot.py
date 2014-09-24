@@ -32,7 +32,8 @@ class Robot(object):
             elif self.direction == 'NW':
                 self.direction = 'N'
             else:
-                print 'Bad Direction'
+                 # This is where an error message would go.
+                 return
         elif char == 'A': #counter-clockwise
             if self.direction == 'N':
                 self.direction = 'NW'
@@ -51,7 +52,8 @@ class Robot(object):
             elif self.direction == 'NW':
                 self.direction = 'W'
             else:
-                print 'Bad Direction'
+                 # This is where an error message would go.
+                 return
         elif char == 'S': #step
             if self.direction == 'N':
                 self.y += 1 
@@ -74,6 +76,8 @@ class Robot(object):
                 self.x -= 1
                 self.y += 1
             else:
-                print 'Bad Direction'
+                # This is where an error message would go.
+                return
         else:
-            print 'Bad Input String'
+             # This is where an error message would go.
+             return

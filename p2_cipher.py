@@ -9,7 +9,9 @@ class Cipher(object):
         self.dupHashMap = {}
     def readIn(self):
         self.message = sys.stdin.readline().rstrip('\n')
-    def removeDups(self): # removes duplicate characters from self.value, the string created from self.key by adding the alphabet
+
+    # removes duplicate characters from self.value, the string created from self.key by adding the alphabet
+    def removeDups(self): 
         self.dupHashMap["A"] = False
         self.dupHashMap["B"] = False
         self.dupHashMap["C"] = False 
@@ -57,7 +59,7 @@ class Cipher(object):
         self.value =  self.key + " ZYXWVUTSRQPONMLKJIHGFEDCBA"
         self.removeDups()
 
-        #create mapping
+        #create decoding mapping
         self.cipherMapping[ self.value[0] ] = "A"
         self.cipherMapping[ self.value[1] ] = "B" 
         self.cipherMapping[ self.value[2] ] = "C" 
@@ -85,9 +87,3 @@ class Cipher(object):
         self.cipherMapping[ self.value[24]] = "Y" 
         self.cipherMapping[ self.value[25]] = "Z"
         self.cipherMapping[ self.value[26]] = " "
-
-
-
-
-
-

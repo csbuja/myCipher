@@ -6,6 +6,8 @@ class IslandMap(object):
         self.totalSize = 0 #the total size of all islands
     def append(self, line):
         self.matrix.append(line)
+
+    #Prints the map inputted from stdin
     def printGeography(self):
         for item in self.matrix:
             line = []
@@ -15,6 +17,8 @@ class IslandMap(object):
                 else:
                     line.append(0)
             print line
+
+    #Prints which nodes have been visited on the map
     def printVisited(self):
         for item in self.matrix:
             line = []
@@ -24,7 +28,10 @@ class IslandMap(object):
                 else:
                     line.append(0)
             print line
-    def canMoveHere(self, nodePos): # passed as [x,y]
+            
+    #Used for conditionals during the exploration of an island
+    #the argument nodePos is passed as coordinate [x,y]
+    def canMoveHere(self, nodePos): 
         if (nodePos[0] < 0) or (nodePos[0] >= self.dimensions) or (nodePos[1] < 0) or (nodePos[1] >= self.dimensions):
             return False
         #it is a node
@@ -32,6 +39,10 @@ class IslandMap(object):
             return True
         else:
             return False
+
+    #Explores the island, marking everything explored as visited
+    #The argument nodePos is passed as coordinate [x,y]
+    #Modifies self.totalsize when the exploration is done
     def exploreIsland(self, nodePos):
         stack = [ [nodePos[0],nodePos[1]] ]
         #if tuple of [x,y] can be reached then add it to the stack as [x,y]
@@ -56,8 +67,11 @@ class IslandMap(object):
             else:
                 stack.pop()
                 size-=1 #only add to size if you have moved
+
         self.totalSize += size # add island size to total size of all islands
 
+    #divide aggregate total island size by the number of islands
+    #convert that number to an integer
     def printAverageIslandSize(self):
         if(self.numIslands == 0 ):
             print 0
